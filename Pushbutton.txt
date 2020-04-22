@@ -1,0 +1,23 @@
+int ledPin1 = 13; 
+int ledPin2 = 8; // choose the pin for the LED
+int inPin = 7;   // choose the input pin (for a pushbutton)
+int val;     // variable for reading the pin status
+
+void setup() {
+  pinMode(ledPin1, OUTPUT);
+  pinMode(ledPin1, OUTPUT);
+  digitalWrite(inPin, LOW);// declare LED as output
+  pinMode(inPin, INPUT);    // declare pushbutton as input
+}
+
+void loop(){
+  val = digitalRead(inPin);  // read input value
+  if (val == HIGH) {         // check if the input is HIGH (button released)
+    digitalWrite(ledPin1, HIGH);
+    digitalWrite(ledPin2, HIGH);// turn LED OFF
+  } else {
+    digitalWrite(ledPin1, LOW);
+    digitalWrite(ledPin2, LOW);// turn LED ON
+  }
+}
+ 
